@@ -23,36 +23,41 @@ class Book {
   }
 }
 
-const myCollection = new Collection();
+let myCollection = new Collection();
 
-
-const title = document.querySelector('.title').value;
-const author = document.querySelector('.author').value;
 const addbtn = document.querySelector('.btn');
+  addbtn.addEventListener('click', (e) => {
+    const title = document.querySelector('.title').value;
+    const author = document.querySelector('.author').value;
+    let newBook = new Book(title, author);
+    myCollection.add(newBook);
+    const display = document.getElementById('book-list');
+    const div = document.createElement('div');
+    div.classList = 'book';
+    div.innerHTML = `<h2>${newBook.title}</h2><p>${newBook.author}</p><button class="remove">Remove</button>`;
+    display.appendChild(div);
+    
+    e.preventDefault();
 
-
-
-addbtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  const display = document.getElementById('book-list');
-  const div = document.createElement('div');
-  div.classList = 'book';
-  div.innerHTML = `<h2>${title}</h2><p>${author}</p><button class="delete">Delete</button>`;
-  display.appendChild(div);
-  let b1 = new Book(title, author);
-  myCollection.add(b1);
-  console.log(myCollection.books);
-  const deletebtn = document.querySelectorAll('.delete');
-  deletebtn.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const book = e.target.parentElement;      
-      book.remove();
-      console.log(myCollection.books);
+    // console.log(myCollection);
+    // localStorage.setItem('myCollection', JSON.stringify(myCollection.books));
+    const deletebtn = document.querySelectorAll('.remove');
+    console.log(deletebtn);
+    deletebtn.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        
+        const book = e.target.parentElement;      
+        myCollection.remove(book);
+        book.remove();
+        // localStorage.removeItem('myCollection');
+        e.preventDefault();    
+      });
     });
-    myCollection.remove(b1);
-  });
+    title.value = '';
+    author.value = '';
 });
-
+// });
+// const getCollection = JSON.parse(localStorage.getItem('myCollection'));
+// console.log(getCollection);
 
 
