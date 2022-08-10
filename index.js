@@ -41,7 +41,7 @@ addbtn.addEventListener('click', (e) => {
     const display = document.getElementById('book-list');
     const div = document.createElement('div');
     div.classList = 'book';
-    div.innerHTML = `<h2>${newBook.title}</h2><p>${newBook.author}</p><button class="remove">Remove</button>`;
+    div.innerHTML = `<div>"${newBook.title}" by ${newBook.author}</div><div><button class="remove">Remove</button></div>`;
     display.appendChild(div);
     document.querySelector('.title').value = '';
     document.querySelector('.author').value = '';
