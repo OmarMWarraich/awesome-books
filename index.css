@@ -1,12 +1,34 @@
 * {
   margin: 0;
   padding: 0;
-  height: 100vh;
   width: 100vw;
   font-family: sans-serif;
 }
 
-/* .boot-list-item {
-  display: flex;
-  flex-direction: column;
-} */
+header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.book-input {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title, .author {
+  width: 60%;
+}
+
+.btn {
+  width: 15%;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: #000 2px 2px;
+}
+
+.btn:hover {
+  background-color: #d3d3d3;
+  color: #000;
+}
+
