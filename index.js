@@ -41,22 +41,45 @@ addbtn.addEventListener('click', (e) => {
     const display = document.getElementById('book-list');
     const div = document.createElement('div');
     div.classList = 'book';
-    div.innerHTML = `<h2>${newBook.title}</h2><p>${newBook.author}</p><button class="remove">Remove</button>`;
+    div.innerHTML = `<div>"${newBook.title}" by ${newBook.author}</div><div><button class="remove">Remove</button></div>`;
     display.appendChild(div);
     document.querySelector('.title').value = '';
     document.querySelector('.author').value = '';
     e.preventDefault();
-    localStorage.setItem('myCollection', JSON.stringify(myCollection.books));
+    localStorage.setItem('Collection', JSON.stringify(myCollection.books));
+
     const deletebtn = document.querySelectorAll('.remove');
 
     deletebtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
-        const book = e.target.parentElement;
+        const book = e.target.parentElement.parentElement;
         myCollection.remove(book);
         book.remove();
-        localStorage.removeItem('myCollection');
         e.preventDefault();
       });
     });
   }
 });
+
+window.onload = () => {
+  const storedBooks = JSON.parse(localStorage.getItem('Collection'));
+  if (storedBooks) {
+    storedBooks.forEach((book) => {
+      const display = document.getElementById('book-list');
+      const div = document.createElement('div');
+      div.classList = 'book';
+      div.innerHTML = `<div>"${book.title}" by ${book.author}</div><div><button class="remove">Remove</button></div>`;
+      display.appendChild(div);
+    });
+  }
+  const deletebtn = document.querySelectorAll('.remove');
+
+  deletebtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const book = e.target.parentElement.parentElement;
+      myCollection.remove(book);
+      book.remove();
+      e.preventDefault();
+    });
+  });
+};

@@ -1,12 +1,62 @@
 * {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
   font-family: sans-serif;
 }
 
-/* .boot-list-item {
+header {
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.book-input {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title,
+.author,
+.book-display {
+  margin: 0 auto;
+  width: 60%;
+  border: 3px solid #000;
+}
+
+.btn {
+  width: 15%;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: #000 2px 2px;
+}
+
+.btn:hover {
+  background-color: #d3d3d3;
+  color: #000;
+}
+
+.book {
   display: flex;
-  flex-direction: column;
-} */
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+.book:nth-of-type(even) {
+  background-color: #d3d3d3;
+}
+
+.book .remove {
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: #000 2px 2px;
+}
+
+.book .remove:hover {
+  background-color: #d3d3d3;
+  color: #000;
+}
