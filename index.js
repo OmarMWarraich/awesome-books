@@ -47,13 +47,12 @@ addbtn.addEventListener('click', (e) => {
     document.querySelector('.author').value = '';
     e.preventDefault();
     localStorage.setItem('Collection', JSON.stringify(myCollection.books));
-    
+
     const deletebtn = document.querySelectorAll('.remove');
 
     deletebtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const book = e.target.parentElement.parentElement;
-        console.log(book);
         myCollection.remove(book);
         book.remove();
         e.preventDefault();
@@ -71,20 +70,16 @@ window.onload = () => {
       div.classList = 'book';
       div.innerHTML = `<div>"${book.title}" by ${book.author}</div><div><button class="remove">Remove</button></div>`;
       display.appendChild(div);
-    }
-    );
+    });
   }
   const deletebtn = document.querySelectorAll('.remove');
 
   deletebtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const book = e.target.parentElement.parentElement;
-      console.log(book);
       myCollection.remove(book);
       book.remove();
       e.preventDefault();
-    }
-    );
-  }
-  );
-}
+    });
+  });
+};
