@@ -44,7 +44,7 @@ header .nav-bar .menu li .menu-item{
   margin: 10px 15px;
 }
 
-/* h1 {
+h1 {
   margin: 25px auto;
   clear: both;
   text-align: center;
@@ -52,7 +52,7 @@ header .nav-bar .menu li .menu-item{
 
 .book-input {
   width: 100%;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
   height: 40px;
 }
@@ -63,6 +63,10 @@ header .nav-bar .menu li .menu-item{
   margin: 0 auto;
   width: 60%;
   border: 3px solid #000;
+}
+
+.book-display {
+  margin-top: 50px !important;
 }
 
 .title,
@@ -104,7 +108,7 @@ header .nav-bar .menu li .menu-item{
 .book .remove:hover {
   background-color: #d3d3d3;
   color: #000;
-} */
+}
 
 .foot{
   position: fixed;
