@@ -26,8 +26,8 @@ class Book {
   }
 }
 
-const date_time = document.querySelector('.date-time');
-date_time.innerHTML = new Date().toLocaleString();
+const dateTime = document.querySelector('.date-time');
+dateTime.innerHTML = new Date().toLocaleString();
 const list = document.getElementById('list');
 const addList = document.getElementById('add');
 const contact = document.getElementById('contact');
@@ -41,17 +41,18 @@ list.addEventListener('click', (e) => {
   list.style.color = 'blue';
   addList.style.color = 'black';
   contact.style.color = 'black';
-  date_time.style.display = 'block';
+  dateTime.style.display = 'block';
   displaySection.style.display = 'block';
   inputSection.style.display = 'none';
   contactSection.style.display = 'none';
+  e.preventDefault();
 });
 
 addList.addEventListener('click', (e) => {
   addList.style.color = 'blue';
   list.style.color = 'black';
   contact.style.color = 'black';
-  date_time.style.display = 'block';
+  dateTime.style.display = 'block';
   displaySection.style.display = 'none';
   contactSection.style.display = 'none';
   inputSection.style.display = 'block';
@@ -64,6 +65,7 @@ addList.addEventListener('click', (e) => {
                           <button type="submit" class="btn">Add</button>
 `;
   e.preventDefault();
+
   const addbtn = document.querySelector('.btn');
   addbtn.addEventListener('click', (e) => {
     const title = document.querySelector('.title').value;
@@ -95,17 +97,16 @@ addList.addEventListener('click', (e) => {
         });
       });
     }
+  });
 });
-  
-});
-  
+
 contact.addEventListener('click', (e) => {
   contact.style.color = 'blue';
   list.style.color = 'black';
   addList.style.color = 'black';
   displaySection.style.display = 'none';
   inputSection.style.display = 'none';
-  date_time.style.display = 'none';
+  dateTime.style.display = 'none';
   contactSection.style.display = 'flex';
   contactSection.innerHTML = `<h1>Contact</h1>
                               <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!<p>
@@ -117,7 +118,7 @@ contact.addEventListener('click', (e) => {
                               </ul>
                               `;
   e.preventDefault();
-} );
+});
 
 window.onload = () => {
   const storedBooks = JSON.parse(localStorage.getItem('Collection'));
