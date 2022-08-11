@@ -26,7 +26,6 @@ class Book {
   }
 }
 
-
 const date_time = document.querySelector('.date-time');
 date_time.innerHTML = new Date().toLocaleString();
 
