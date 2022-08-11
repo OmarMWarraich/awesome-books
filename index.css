@@ -127,3 +127,12 @@ h1 {
   padding-left: 15px;
   margin-right: 25px;
 }
+
+.contact-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+

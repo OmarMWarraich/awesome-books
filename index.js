@@ -33,18 +33,25 @@ const addList = document.getElementById('add');
 const contact = document.getElementById('contact');
 const displaySection = document.getElementById('book-list');
 const inputSection = document.querySelector('.book-input');
-const contactSection = document.querySelector('.contact');
+const contactSection = document.querySelector('.contact-section');
 
 const myCollection = new Collection();
 
-
 list.addEventListener('click', (e) => {
+  list.style.color = 'blue';
+  addList.style.color = 'black';
+  contact.style.color = 'black';
+  date_time.style.display = 'block';
   displaySection.style.display = 'block';
   inputSection.style.display = 'none';
   contactSection.style.display = 'none';
 });
 
 addList.addEventListener('click', (e) => {
+  addList.style.color = 'blue';
+  list.style.color = 'black';
+  contact.style.color = 'black';
+  date_time.style.display = 'block';
   displaySection.style.display = 'none';
   contactSection.style.display = 'none';
   inputSection.style.display = 'block';
@@ -93,11 +100,22 @@ addList.addEventListener('click', (e) => {
 });
   
 contact.addEventListener('click', (e) => {
+  contact.style.color = 'blue';
+  list.style.color = 'black';
+  addList.style.color = 'black';
   displaySection.style.display = 'none';
   inputSection.style.display = 'none';
   date_time.style.display = 'none';
-  contactSection.style.display = 'block';
-  contactSection.innerHTML = `<h1>Contact</h1><p>Hello there!<p>`;
+  contactSection.style.display = 'flex';
+  contactSection.innerHTML = `<h1>Contact</h1>
+                              <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!<p>
+                              <br>
+                              <ul>
+                                  <li>Our email: mail@mail.com</li>
+                                  <li>Our phone: +1 (123) 456-7890</li>
+                                  <li>Our address: 123 Main St, Anytown, USA</li>
+                              </ul>
+                              `;
   e.preventDefault();
 } );
 
