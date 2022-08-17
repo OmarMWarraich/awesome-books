@@ -6,4 +6,6 @@ const displaySection = document.getElementById('book-list');
 const inputSection = document.querySelector('.book-input');
 const contactSection = document.querySelector('.contact-section');
 
-export { dateTime, list, addList, contact, displaySection, inputSection, contactSection };
+export {
+  dateTime, list, addList, contact, displaySection, inputSection, contactSection,
+};

@@ -1,15 +1,18 @@
-import { dateTime, list, addList, contact, displaySection, inputSection, contactSection } from './variables.js';
+import {
+  dateTime, list, addList, contact, displaySection, inputSection, contactSection,
+} from './variables.js';
 
+// eslint-disable-next-line import/prefer-default-export
 export const contactUs = () => {
-    contact.addEventListener('click', (e) => {
-        contact.style.color = 'blue';
-        list.style.color = 'black';
-        addList.style.color = 'black';
-        displaySection.style.display = 'none';
-        inputSection.style.display = 'none';
-        dateTime.style.display = 'none';
-        contactSection.style.display = 'flex';
-        contactSection.innerHTML = `<h1>Contact</h1>
+  contact.addEventListener('click', (e) => {
+    contact.style.color = 'blue';
+    list.style.color = 'black';
+    addList.style.color = 'black';
+    displaySection.style.display = 'none';
+    inputSection.style.display = 'none';
+    dateTime.style.display = 'none';
+    contactSection.style.display = 'flex';
+    contactSection.innerHTML = `<h1>Contact</h1>
                                     <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!<p>
                                     <br>
                                     <ul>
@@ -18,6 +21,6 @@ export const contactUs = () => {
                                         <li>Our address: 123 Main St, Anytown, USA</li>
                                     </ul>
                                     `;
-        e.preventDefault();
-      });
-}
+    e.preventDefault();
+  });
+};

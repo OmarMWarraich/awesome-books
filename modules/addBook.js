@@ -1,15 +1,18 @@
-import { dateTime, list, addList, contact, displaySection, inputSection, contactSection } from './variables.js';
-import  { myCollection } from './Collection.js';
+import {
+  dateTime, list, addList, contact, displaySection, inputSection, contactSection,
+} from './variables.js';
+import { myCollection } from './Collection.js';
 
 // eslint-disable-next-line max-classes-per-file
 class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
+}
 
-export const addBook = (title, author) => {  
+// eslint-disable-next-line import/prefer-default-export
+export const addBook = (title, author) => {
   addList.addEventListener('click', (e) => {
     addList.style.color = 'blue';
     list.style.color = 'black';
@@ -27,7 +30,7 @@ export const addBook = (title, author) => {
                             <button type="submit" class="btn">Add</button>
   `;
     e.preventDefault();
-  
+
     const addbtn = document.querySelector('.btn');
     addbtn.addEventListener('click', (e) => {
       title = document.querySelector('.title').value;
@@ -82,4 +85,3 @@ window.onload = () => {
     });
   });
 };
-

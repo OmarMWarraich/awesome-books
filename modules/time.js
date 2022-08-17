@@ -1,7 +1,8 @@
-/* eslint-disable no-undef */
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
+
 export default function time() {
-    const localTime = luxon.DateTime.local();
-    const timeNow = document.querySelector('.date-time');
-    timeNow.innerText = `${localTime.toLocaleString(luxon.DateTime.DATE_FULL)}, ${localTime.toLocaleString(luxon.DateTime.TIME_WITH_SECONDS)}`;
-    setTimeout(startTime, 1000);
-  }
+  const localTime = DateTime.local();
+  const timeNow = document.querySelector('.date-time');
+  timeNow.innerText = `${localTime.toLocaleString(DateTime.DATE_FULL)}, ${localTime.toLocaleString(DateTime.TIME_WITH_SECONDS)}`;
+  setTimeout(time, 1000);
+}
