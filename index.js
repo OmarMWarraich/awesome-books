@@ -1,3 +1,5 @@
+import { dateTime, list, addList, contact, displaySection, inputSection, contactSection } from './modules/variables.js';
+
 // eslint-disable-next-line max-classes-per-file
 class Collection {
   // eslint-disable-next-line no-unused-vars
@@ -18,6 +20,7 @@ class Collection {
   }
 }
 
+
 // eslint-disable-next-line max-classes-per-file
 class Book {
   constructor(title, author) {
@@ -26,14 +29,9 @@ class Book {
   }
 }
 
-const dateTime = document.querySelector('.date-time');
+
 dateTime.innerHTML = new Date().toLocaleString();
-const list = document.getElementById('list');
-const addList = document.getElementById('add');
-const contact = document.getElementById('contact');
-const displaySection = document.getElementById('book-list');
-const inputSection = document.querySelector('.book-input');
-const contactSection = document.querySelector('.contact-section');
+
 
 const myCollection = new Collection();
 
