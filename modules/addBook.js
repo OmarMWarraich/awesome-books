@@ -29,7 +29,6 @@ export const addBook = (title, author) => {
     e.preventDefault();
   
     const addbtn = document.querySelector('.btn');
-    console.log(addbtn);
     addbtn.addEventListener('click', (e) => {
       title = document.querySelector('.title').value;
       author = document.querySelector('.author').value;
@@ -48,9 +47,7 @@ export const addBook = (title, author) => {
         document.querySelector('.author').value = '';
         e.preventDefault();
         localStorage.setItem('Collection', JSON.stringify(myCollection.books));
-  
         const deletebtn = document.querySelectorAll('.remove');
-  
         deletebtn.forEach((btn) => {
           btn.addEventListener('click', (e) => {
             const book = e.target.parentElement.parentElement;
@@ -60,6 +57,28 @@ export const addBook = (title, author) => {
           });
         });
       }
+    });
+  });
+};
+
+window.onload = () => {
+  const storedBooks = JSON.parse(localStorage.getItem('Collection'));
+  if (storedBooks) {
+    storedBooks.forEach((book) => {
+      const display = document.getElementById('book-list');
+      const div = document.createElement('div');
+      div.classList = 'book';
+      div.innerHTML = `<div>"${book.title}" by ${book.author}</div><div><button class="remove">Remove</button></div>`;
+      display.appendChild(div);
+    });
+  }
+  const deletebtn = document.querySelectorAll('.remove');
+  deletebtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const book = e.target.parentElement.parentElement;
+      myCollection.remove(book);
+      book.remove();
+      e.preventDefault();
     });
   });
 };
